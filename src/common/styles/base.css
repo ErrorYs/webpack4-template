@@ -1,0 +1,66 @@
+body {
+	font-size: 12px;
+}
+/* 超链接样式 */
+a {
+	color: #666666;
+	cursor: pointer;
+	text-decoration: none;
+}
+a:hover {
+	color: #ee5533;
+	text-decoration: none;
+}
+a:focus {
+	text-decoration: none;
+}
+/* 定宽布局 */
+.w{
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+/* panel */
+.panel{
+	padding: 10px;
+	margin-bottom: 10px;
+	background: #fff;
+}
+.panel .panel-title{
+	padding: 10px;
+	font-size: 14px;
+	color: #666;
+	font-weight: bold;
+	border-bottom: 1px solid #eee;
+}
+.panel .panel-body{
+	padding: 10px;
+	overflow: hidden;
+}
+
+/* 全局通用样式 */
+/* 隐藏类 */
+.hide{
+	display: none;
+}
+
+/* btn */
+
+/* loading */
+.loading{
+	margin: 10px auto;
+	display: block;
+	width: 65px;
+	height: 65px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	background: url(../images//icon//loading.gif) no-repeat;
+	opacity: .6;
+}
+
+/*input*/
+.form-control:focus {
+	border-color: #ee5533;
+}

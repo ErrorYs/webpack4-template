@@ -8,11 +8,11 @@ const rules = [{
   // use: ["style-loader", "css-loader", "sass-loader","postcss-loader"]
   // 此处为分离css的写法
   /*use: extractTextPlugin.extract({
-        	fallback: "style-loader",
-        	use: ["css-loader", "sass-loader"],
-        	// css中的基础路径
-        	publicPath: "../"
-        })*/
+          	fallback: "style-loader",
+          	use: ["css-loader", "sass-loader"],
+          	// css中的基础路径
+          	publicPath: "../"
+          })*/
   // 区别开发环境和生成环境
   use: process.env.NODE_ENV === 'development' ? ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'] : extractTextPlugin.extract({
     fallback: 'style-loader',
@@ -41,23 +41,38 @@ const rules = [{
     }
   }]
 },
+// {
+//   test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+//   loader: 'url-loader',
+//   options: {
+//     limit: 10000
+//   }
+// },
+
 {
-  test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-  loader: 'url-loader',
-  options: {
-    limit: 10000
-  }
-},
-{
-  test: /\.html$/,
-  // html中的img标签
-  use: {
-    loader: 'html-loader?config=raw-loader',
-    options: {
-      attrs: ['img:src']
-    }
-  }
+  test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+  loader: 'url?limit=10000&mimetype=application/font-woff'
 }, {
+  test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+  loader: 'url?limit=10000&mimetype=application/octet-stream'
+}, {
+  test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+  loader: 'file'
+}, {
+  test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+  loader: 'url?limit=10000&mimetype=image/svg+xml'
+},
+// {
+//   test: /\.html$/,
+//   // html中的img标签
+//   use: {
+//     loader: 'html-loader?config=raw-loader',
+//     options: {
+//       attrs: ['img:src']
+//     }
+//   }
+// },
+{
   test: /\.less$/,
   // 三个loader的顺序不能变
   // 不分离的写法

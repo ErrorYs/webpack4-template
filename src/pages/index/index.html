@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>入口页</title>
+<%= require("html-loader!../../components/head/head.html") %>
+<title><%= htmlWebpackPlugin.options.title%> - MMall电商平台</title>
 </head>
-
 <body>
-    <div>哈哈哈</div>
-    <div class="box"></div>
-    <img src="./avatar.jpg" alt="">
+        <%= require("html-loader!../../components/header/index.html") %>
+        <%= require("html-loader!../../components/search/search.html") %>
+        <%= require("html-loader!../../components/footer/index.html") %>
 </body>
-
 </html>

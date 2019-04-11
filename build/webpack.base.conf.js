@@ -53,7 +53,12 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '../src')
+      '@': path.resolve(__dirname, '../src'),
+      'styles': path.resolve(__dirname, '../src/common/styles'),
+      'components': path.resolve(__dirname, '../src/components'),
+      'util': path.resolve(__dirname, '../src/util'),
+      'service': path.resolve(__dirname, '../src/service'),
+      'bootstrap': path.resolve(__dirname, '../src/assets/bootstrap/js/bootstrap.min.js')
     }
   },
   //将外部变量或者模块加载进来
@@ -83,7 +88,10 @@ module.exports = {
   plugins: [
     // 全局暴露统一入口
     new webpack.ProvidePlugin({
-      $: 'jquery'
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      _mm: path.resolve(__dirname, '../src/util/mm.js') //加载公共样式
     }),
     //静态资源输出
     new copyWebpackPlugin([{
@@ -104,7 +112,7 @@ const htmlArray = []
 Object.keys(entryObj).forEach(element => {
   htmlArray.push({
     _html: element,
-    title: '',
+    title: '11',
     chunks: ['vendor', 'common', element]
   })
 })

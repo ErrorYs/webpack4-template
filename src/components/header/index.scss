@@ -1,0 +1,23 @@
+.header {
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #dddddd;
+  .nav-left {
+    float: left;
+    .list {
+      .item {
+        float: left;
+        margin-right: 10px;
+      }
+    }
+  }
+  .nav-right {
+    float: right;
+    .list {
+      .item {
+        float: left;
+        margin-left: 10px;
+      }
+    }
+  }
+}

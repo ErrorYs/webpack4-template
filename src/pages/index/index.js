@@ -1,6 +1,9 @@
+import 'bootstrap'
 import './index.scss'
-if (process.env.NODE_ENV !== 'production') {
-  require('./index.html')
-}
-console.log(1)
-$('.box').css('background', 'red')
+import 'components/header/index.js'
+import 'components/footer/index.js'
+import 'components/search/search.js'
+// import _test from '../../service/test'
+// _test.gettest(function (res) {
+//   console.log(res)
+// })

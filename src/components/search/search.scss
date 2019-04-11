@@ -1,0 +1,31 @@
+@import "styles/mixins.scss";
+.search {
+  height: 110px;
+  .logo {
+    // line-height: 40px;
+    // height: 40px;
+    float: left;
+
+  }
+  .search-form {
+    padding: 50px 0 0 300px;
+    width: 80%;
+    .form-control {
+      padding: 20px 12px;
+      outline: none;
+    }
+    .btn {
+      padding: 10px 20px;
+      &.btn-default {
+        //background-color: ;
+        background-color: $color-yellow-1;
+        color: #fff;
+      }
+      &.btn-default:focus {
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

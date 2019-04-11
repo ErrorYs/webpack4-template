@@ -26,7 +26,7 @@ const webpackConfigDev = {
     contentBase: path.join(__dirname, '../src'),
     publicPath: '/',
     host: '127.0.0.1',
-    port: '8090',
+    port: '8000',
     overlay: true, // 浏览器页面上显示错误
     // open: true, // 开启浏览器
     stats: 'errors-only', //stats: "errors-only"表示只打印错误：
@@ -34,11 +34,11 @@ const webpackConfigDev = {
     //服务器代理配置项
     proxy: { //启动代理服务器
       '/api': {
-        target: 'http://www.127.0.0.1:3000', //把本地api转发到3000端口
+        target: 'http://localhost:3001/api', //把本地api转发到3000端口
         secure: false, //如果是https网址,设置这个
-        // pathRewrite: {
-        //   'header.json': 'demo.json' //把3000端口的header接口转发到demo接口
-        // },
+        pathRewrite: {
+          '^/api': '' //把3000端口的header接口转发到demo接口
+        },
         changeOrigin: true //如果网站设置了changeOrigin不允许爬虫,设置这个
       }
     }
